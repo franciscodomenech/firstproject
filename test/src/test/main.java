@@ -6,6 +6,7 @@ public class main {
 		System.out.println("Hola mundo!!!!!");
 		System.out.println("variante");
 		//añadido por Javier//
+		//añadido por Javier_1//
 	}
 
 }
