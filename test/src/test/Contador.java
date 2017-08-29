@@ -1,6 +1,6 @@
 package test;
 
-public class Contador extends Thread {
+public class Contador {
 	
 	private boolean _exec;
 	private int _actual;
@@ -16,15 +16,20 @@ public class Contador extends Thread {
 		_listener = listener;
 	}
 	
-	public void run() {
-		while(_exec) {
-			try {
-				sleep(1000);
-			} catch (InterruptedException e) {
+	public void start() {
+		new Thread() {
+			public void run() {
+				while(_exec) {
+					try {
+						sleep(1000);
+					} catch (InterruptedException e) {
+					}
+					_actual++;
+					_listener.onupdate(_tag, _actual);
+				}
 			}
-			_actual++;
-			_listener.onupdate(_tag, _actual);
-		}
+		}.start();
+		
 	}
 	
 	public void exec() {
