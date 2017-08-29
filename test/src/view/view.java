@@ -73,7 +73,7 @@ public class view extends JFrame implements ActionListener {
 
     
     public void actionPerformed(ActionEvent e) {   // obtenemos el contenido de la caja de texto
-    
+    	
     }
 
 }
