@@ -7,6 +7,7 @@ public class main {
 		System.out.println("variante");
 		System.out.print("nueva rama2");
 		System.out.print("nueva rama3");
+		System.out.print("nueva rama4");
 	}
 
 }
