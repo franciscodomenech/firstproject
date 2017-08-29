@@ -7,6 +7,8 @@ public class main {
 		System.out.println("varianteSSSSssssssSs");
 		System.out.println("varianteSSSSssssssSs");
 		System.out.println("varianteSSSSssssssSs");
+		System.out.println("varianteSSSSssssssSs");
+		System.out.println("varianteSSSSssssssSs");
 	}
 
 }
