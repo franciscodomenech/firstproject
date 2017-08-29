@@ -8,8 +8,17 @@ public class main {
 		
 		System.out.println("Hola mundo!!!!!");
 		System.out.println("variante");
+
 		System.out.println("Wasa!!!!");
 		/*modificacion Javi*/ 
+
+
+		System.out.println("Viva España!!!");
+		System.out.println("OTR<A PRUEBASDlkjsaasdf");
+
+		System.out.println("Wasa!!!!");
+		System.out.println("CONFLICTO MADE IN JAVIER");
+
 	}
 
 }
