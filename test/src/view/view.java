@@ -23,9 +23,11 @@ public class view extends JFrame implements ActionListener {
         super();                    // usamos el contructor de la clase padre JFrame
         configurarVentana();        // configuramos la ventana
         inicializarComponentes();   // inicializamos los atributos o componentes
+        setVisible(true);
     }
 
     private void configurarVentana() {
+    	
         this.setTitle("Hilos");                   // colocamos titulo a la ventana
         this.setSize(300, 200);                                 // colocamos tamanio a la ventana (ancho, alto)
         this.setLocationRelativeTo(null);                       // centramos la ventana en la pantalla
