@@ -2,15 +2,13 @@ package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
-import javax.swing.JTextField;
+import test.OnClick;
 
-public class view extends JFrame implements ActionListener {
+public class view extends JFrame {
 
 	private JLabel lblContador;           // Etiqueta del contador
 	private JLabel lblTag;           // Etiqueta del boton pulsado
@@ -18,9 +16,11 @@ public class view extends JFrame implements ActionListener {
     private JSpinner spB;        // Spinner para el B
     private JButton btnA;          // boton con una determinada accion
     private JButton btnB;          // boton con una determinada accion
+    private OnClick _listener;
 
-    public view() {
+    public view(OnClick listener) {
         super();                    // usamos el contructor de la clase padre JFrame
+        _listener=listener;
         configurarVentana();        // configuramos la ventana
         inicializarComponentes();   // inicializamos los atributos o componentes
         setVisible(true);
@@ -61,8 +61,9 @@ public class view extends JFrame implements ActionListener {
         
         
         
-        btnA.addActionListener(this);   // hacemos que el boton tenga una accion y esa accion estara en esta clase
-        btnB.addActionListener(this);  
+        setOnlistenerButonA();
+        setOnlistenerButonB();
+        
         
         // adicionamos los componentes a la ventana
         this.add(this.lblContador);
@@ -73,9 +74,33 @@ public class view extends JFrame implements ActionListener {
         this.add(this.btnB);
     }
 
+    private void setOnlistenerButonA () {
+    	btnA.addActionListener(new ActionListener() { //Detectamos evento
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) { //Realizamos accion
+				_listener.onAClick();
+				
+			}
+    		
+    	});
+    }
     
-    public void actionPerformed(ActionEvent e) {   // obtenemos el contenido de la caja de texto
-    
+    private void setOnlistenerButonB () {
+    	btnB.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				_listener.onBClick();
+				
+			}
+    		
+    	});
+    }
+    public void printState(String tag, int actual) {
+    	
+    	this.lblTag.setText(tag);
+    	this.lblContador.setText(""+actual);
     }
 
 }

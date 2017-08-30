@@ -1,13 +1,21 @@
 package test;
 
+import view.view;
+
 public class ContadorController implements OnClick,Contador.OnUpdate {
 
 	private Contador _ca;
 	private Contador _cb;
 	
+	private view _view;
+	
 	public ContadorController() {
 		_ca = new Contador("A",this);
 		_cb = new Contador("B",this);
+		_view= new view(this);
+		
+		//_view.printState(_ca.getTag(),_ca.getActual());
+		
 	}
 	
 	@Override
@@ -28,7 +36,12 @@ public class ContadorController implements OnClick,Contador.OnUpdate {
 
 	@Override
 	public void onupdate(String tag, int actual) {
-		// TODO Auto-generated method stub
+		
+		synchronized(_view) {//No pueden pintar dos a la vez
+			
+			_view.printState(tag,actual);
+			
+		}
 		
 	}
 
