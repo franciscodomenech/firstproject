@@ -1,21 +1,21 @@
 package controllers;
 import javax.swing.SpinnerNumberModel;
 
-import model.contador;
+import model.Contador;
 import views.View;
 
-public class ContadorController implements View.OnChange,contador.OnUpdate {
+public class ContadorController implements View.OnChange,Contador.OnUpdate {
  
- 	private contador _ca;
- 	private contador _cb;
+ 	private Contador _ca;
+ 	private Contador _cb;
  	private View _view;
  	
  	public ContadorController() {
 		
  		_view = new View(this);
  		_view.setVisible(true);
- 		_ca = new contador("A",this);
- 		_cb = new contador("B",this);
+ 		_ca = new Contador("A",this);
+ 		_cb = new Contador("B",this);
  	}
  	
  	@Override

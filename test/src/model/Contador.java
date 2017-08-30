@@ -1,7 +1,7 @@
 package model;
 
 
-public class contador extends Thread{
+public class Contador extends Thread{
 	private boolean _exec;
 	 	private int _actual;
 	 	private long _sleep;
@@ -9,7 +9,7 @@ public class contador extends Thread{
 	 	private OnUpdate _listener;
 	 	
 	 	
-		public contador(String tag,OnUpdate listener) {
+		public Contador(String tag,OnUpdate listener) {
 	 		_tag = tag;
 	 		_exec = false;
 	 		_sleep = 1000;
@@ -17,7 +17,7 @@ public class contador extends Thread{
 	 		_listener = listener;
 	 	}
 		
-		public contador(String tag,OnUpdate listener, long sleep) {
+		public Contador(String tag,OnUpdate listener, long sleep) {
 	 		_tag = tag;
 	 		_exec = false;
 	 		_sleep = sleep;

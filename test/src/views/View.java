@@ -67,6 +67,8 @@ public class View extends JFrame {
         btnA.setBounds(50, 100, 100, 30);  // colocamos posicion y tamanio al boton (x, y, ancho, alto)
         btnB.setBounds(150, 100, 100, 30);
         
+        
+        //Llamada a eventos
         setListenerButtonA();
         setListenerButtonB();
         
