@@ -14,7 +14,6 @@ public class ContadorController implements OnClick,Contador.OnUpdate {
 		_cb = new Contador("B",this);
 		_view= new view(this);
 		
-		//_view.printState(_ca.getTag(),_ca.getActual());
 		
 	}
 	
